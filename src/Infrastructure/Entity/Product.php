@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Asserts;
  * @ORM\Table(name="products")
  * @UniqueEntity({"code"})
  */
-class Product implements ToArrayInterface
+class Product
 {
     /**
      * @ORM\Id()
