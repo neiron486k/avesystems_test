@@ -19,7 +19,7 @@ class ProductController extends BaseController
      */
     public function create(Request $request, ProductRepository $repository): JsonResponse
     {
-        $data = json_decode($request->getContent(), true);
+        $data = json_decode($request->getContent(), true) ?? $request->request->all();
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->submit($data);
